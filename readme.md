@@ -1,93 +1,53 @@
 # Delphire.js
 
-Delphire.js is a pure javascript implimentation of the Delphire Bridge in ES6.
+Delphire.js is a pure javascript implimentation of the Delphire Bridge. It is availble in ES6 as well.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Installation
+### Installing
 
-Follow the instructions below to install
+A step by step series of examples that tell you have to get a development env running
 
-```
-npm i delphire-js-npm
-```
-
-Then include. Here is a sample using require
+Say what the step will be
 
 ```
-var delphireJsNpm = require("delphire-js-npm")
+Give the example
 ```
 
-Call delphireJS
+And repeat
 
 ```
-delphireJsNpm.delphireJS();
-```
-Lastly call the init function and a promise will be returned ocne the bridge recieves data from the app
-
-```
-Delphire.init().then(function(){
-	document.getElementById('token').innerHTML = window.Delphire.params.token;
-	document.getElementById('api').innerHTML = window.Delphire.params.url;
-	document.getElementById('user').innerHTML = window.Delphire.params.currentUser.name;
-});
+until finished
 ```
 
-## Available calls
+End with an example of getting some data out of the system or using it for a little demo
 
-In addition to the standard data returned from the Delphire bridge there are also methods for: 
- * Tracking
+## Running the tests
 
-```
- var props = {"action":"open","createdAt":unicodetimestamp, "service":"LayoutService","target":{"description":"Main Layout","id":"$guid","type":"layout"}}
- window.Delphire.track(props);
-```
- * Get a users employees (manager to employee relationships)
+Explain how to run the automated tests for this system
 
-```
-window.Delphire.getSubordinates().then(function(users){
-	console.log(users)
-}
+### Break down into end to end tests
 
-returns a JSON objects of users in a promise
-```
-
- * Inter Tile Linking to open one module from another
+Explain what these tests test and why
 
 ```
-window.Delphire.internalLink({ key, payload })
-```
- * Closing and Returning to the Dashboard
-
-```
-window.Delphire.close();
-```
- * Opening Resources in Delphire
-
-```
-window.Delphire.openResource({ 'optimized', 'resourceId' }) 
-```
- * Get a users manager (employee to manager relationships)
-
-```
-window.Delphire.getManager().then(function(manager){
-	console.log(manager)
-}
-
-returns a JSON objects of manager in a promise
+Give an example
 ```
 
+### And coding style tests
 
-## Testing
+Explain what these tests test and why
 
-
+```
+Give an example
+```
 
 
 ## Authors
-* **Frank Rue** - *Initial work* - [Delphire.js](http://gitlab.bocodigital.com/delphire/delphire-js)
-* **Bruce Hubbard** - *Current build* - [Delphire.js](http://gitlab.bocodigital.com/delphire/delphire-js)
+
+* **Frank Ruen** - *Initial work* - [Delphire.js](http://gitlab.bocodigital.com/delphire/delphire-js)
 
 ## License
 
