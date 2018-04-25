@@ -1,0 +1,11 @@
+{
+  "name": "delphire-js-npm",
+  "version": "1.1.5",
+  "description": "pure js implimentation of delphire bridge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bruce Hubbard",
+  "license": "ISC"
+}
