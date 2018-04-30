@@ -87,7 +87,7 @@ returns a JSON objects of manager in a promise
 
 ## Authors
 * **Frank Rue** - *Initial work* - [Delphire.js](http://gitlab.bocodigital.com/delphire/delphire-js)
-* **Bruce Hubbard** - *Current build* - [Delphire.js](http://gitlab.bocodigital.com/delphire/delphire-js)
+* **Bruce Hubbard** - *Current build* - [Delphire.js](https://www.npmjs.com/package/delphire-js-npm)
 
 ## License
 
