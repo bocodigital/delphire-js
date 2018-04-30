@@ -1,53 +1,93 @@
 # Delphire.js
 
-Delphire.js is a pure javascript implimentation of the Delphire Bridge. It is availble in ES6 as well.
+Delphire.js is a pure javascript implimentation of the Delphire Bridge in ES6.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Installing
+### Installation
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+Follow the instructions below to install
 
 ```
-Give the example
+npm i delphire-js-npm
 ```
 
-And repeat
+Then include. Here is a sample using require
 
 ```
-until finished
+var delphireJsNpm = require("delphire-js-npm")
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Call delphireJS
 
 ```
-Give an example
+delphireJsNpm.delphireJS();
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
+Lastly call the init function and a promise will be returned ocne the bridge recieves data from the app
 
 ```
-Give an example
+Delphire.init().then(function(){
+	document.getElementById('token').innerHTML = window.Delphire.params.token;
+	document.getElementById('api').innerHTML = window.Delphire.params.url;
+	document.getElementById('user').innerHTML = window.Delphire.params.currentUser.name;
+});
 ```
+
+## Available calls
+
+In addition to the standard data returned from the Delphire bridge there are also methods for: 
+ * Tracking
+
+```
+ var props = {"action":"open","createdAt":unicodetimestamp, "service":"LayoutService","target":{"description":"Main Layout","id":"$guid","type":"layout"}}
+ window.Delphire.track(props);
+```
+ * Get a users employees (manager to employee relationships)
+
+```
+window.Delphire.getSubordinates().then(function(users){
+	console.log(users)
+}
+
+returns a JSON objects of users in a promise
+```
+
+ * Inter Tile Linking to open one module from another
+
+```
+window.Delphire.internalLink({ key, payload })
+```
+ * Closing and Returning to the Dashboard
+
+```
+window.Delphire.close();
+```
+ * Opening Resources in Delphire
+
+```
+window.Delphire.openResource({ 'optimized', 'resourceId' }) 
+```
+ * Get a users manager (employee to manager relationships)
+
+```
+window.Delphire.getManager().then(function(manager){
+	console.log(manager)
+}
+
+returns a JSON objects of manager in a promise
+```
+
+
+## Testing
+
+
 
 
 ## Authors
-
-* **Frank Ruen** - *Initial work* - [Delphire.js](http://gitlab.bocodigital.com/delphire/delphire-js)
+* **Frank Rue** - *Initial work* - [Delphire.js](http://gitlab.bocodigital.com/delphire/delphire-js)
+* **Bruce Hubbard** - *Current build* - [Delphire.js](http://gitlab.bocodigital.com/delphire/delphire-js)
 
 ## License
 
