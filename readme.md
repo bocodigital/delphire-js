@@ -29,9 +29,9 @@ Lastly call the init function and a promise will be returned ocne the bridge rec
 
 ```
 Delphire.init().then(function(){
-	document.getElementById('token').innerHTML = window.Delphire.params.token;
-	document.getElementById('api').innerHTML = window.Delphire.params.url;
-	document.getElementById('user').innerHTML = window.Delphire.params.currentUser.name;
+	document.getElementById('token').innerHTML = window.Delphire.token;
+	document.getElementById('api').innerHTML = window.Delphire.url;
+	document.getElementById('user').innerHTML = window.Delphire.currentUser.name;
 });
 ```
 
