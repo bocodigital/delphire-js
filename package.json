@@ -1,6 +1,6 @@
 {
   "name": "delphire-js-npm",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "pure js implimentation of delphire bridge",
   "main": "index.js",
   "scripts": {
