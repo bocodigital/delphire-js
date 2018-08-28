@@ -128,8 +128,11 @@ exports.delphireJS = function() {
 
     getFormProgress(props) {
       if (location.href.indexOf('localhost') !== -1) { console.info('[ get form progress service ]', props); }
-      this.bridge.default.emit('form-get-progress', props);
-      return null;
+      return new Promise((resolve, reject) => {
+        this.bridge.default.on('form-got-progress', (event, data) => resolve(data.progress));
+        this.bridge.default.emit('form-get-progress', props);
+        return null;
+      });
     }
 
     getSubordinates() {
